@@ -1,0 +1,3 @@
+C:/Users/idate/CLionProjects/CA2/cmake-build-debug/CMakeFiles/CA2.dir
+C:/Users/idate/CLionProjects/CA2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/idate/CLionProjects/CA2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
