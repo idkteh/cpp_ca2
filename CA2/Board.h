@@ -14,6 +14,8 @@ public:
     void displayAllBugs();
     void findBug(int id);
     void tap();
+    void displayAllBugPaths();
+    void writeToFile();
 private:
     std::vector<Bug*> bugs;   //vector for storing pointers of all bugs
 };

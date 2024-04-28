@@ -11,4 +11,6 @@ add_executable(CA2 main.cpp
         Hopper.cpp
         Hopper.h
         Board.cpp
-        Board.h)
+        Board.h
+        Randy.cpp
+        Randy.h)

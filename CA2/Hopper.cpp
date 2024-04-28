@@ -11,6 +11,7 @@ Hopper::Hopper(int id,int x, int y,int direction,int size,int hopLength) {
     this->size = size;
     this->alive = true;
     this->hopLength = hopLength;
+    path.push_back(position);
 }
 
 void Hopper::move(){

@@ -3,6 +3,7 @@
 //
 
 #include "Bug.h"
+#include <iostream>
 using namespace std;
 Bug::Bug(int id,int x, int y,int direction,int size){
     this->id = id;
@@ -96,3 +97,9 @@ bool Bug::isWayBlocked(){
     return false;
 }
 
+void Bug::lifeHistory(){
+    cout<<id<<endl;
+    for (auto it = path.rbegin(); it != path.rend(); ++it) {   //loops through everything in the path list and print it
+        cout<< std::to_string(it->first) + ", " + std::to_string(it->second) + "\n";
+    }
+}

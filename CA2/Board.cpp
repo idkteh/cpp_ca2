@@ -7,6 +7,7 @@
 #include <iostream>
 #include "Crawler.h"
 #include "Hopper.h"
+#include "Randy.h"
 
 int stringToInt(std::string str) {
     // https://cplusplus.com/reference/string/stoi/
@@ -56,6 +57,8 @@ Board::Board() {
                     temp = bug.substr(0, bug.length());
                     hop_lenght = stringToInt(temp);
                     bugs.push_back(new Hopper(id,x,y,direction,size,hop_lenght));
+                }else if(bugType=="R;") {
+                    bugs.push_back(new Randy(id, x, y, direction, size));
                 }
             }
         }
@@ -90,4 +93,26 @@ void Board::tap(){
         (*it)->move();
        // cout << (*it)->toString() << endl;
     }
+}
+
+void Board::displayAllBugPaths(){
+    vector<Bug*>::iterator it;
+    for (it = bugs.begin(); it != bugs.end(); it++){
+        (*it)->lifeHistory();
+        // cout << (*it)->toString() << endl;
+    }
+}
+
+void Board::writeToFile(){
+    std::ofstream fout("bugs_life_history_date_time.out");
+    if(fout){
+        vector<Bug*>::iterator it;
+        for (it = bugs.begin(); it != bugs.end(); it++){
+            fout<<(*it)->toString()<<endl;  // write toString into file
+            for (auto i = (*it)->getPath().rbegin(); i != (*it)->getPath().rend(); ++i) {  //gets the path and iterates through it
+                fout<< std::to_string(i->first) + ", " + std::to_string(i->second) + "\n";   // writes path into file
+            }
+        }
+    }
+    fout.close();
 }

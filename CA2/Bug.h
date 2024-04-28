@@ -48,6 +48,8 @@ public:
     void setPath(const list<pair<int, int>> &path);
 
     virtual std::string toString() = 0;
+
+    void lifeHistory();
 };
 
 
