@@ -12,7 +12,8 @@ class Board {
 public:
     Board();
     void displayAllBugs();
-
+    void findBug(int id);
+    void tap();
 private:
     std::vector<Bug*> bugs;   //vector for storing pointers of all bugs
 };

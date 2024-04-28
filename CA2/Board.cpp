@@ -73,4 +73,21 @@ void Board::displayAllBugs() {
 
 }
 
+void Board::findBug(int id){
+    vector<Bug*>::iterator it;
+    for (it = bugs.begin(); it != bugs.end(); it++){
+        if((*it)->getId()==id){
+            cout << (*it)->toString() << endl; //dereferences the iterator to get the id of the object it points at
+            return;   //ends method early
+        }
+    }
+    cout<<"bug "+std::to_string(id)+" not found"<<endl;
+}
 
+void Board::tap(){
+    vector<Bug*>::iterator it;
+    for (it = bugs.begin(); it != bugs.end(); it++){
+        (*it)->move();
+       // cout << (*it)->toString() << endl;
+    }
+}

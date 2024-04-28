@@ -10,6 +10,7 @@ Bug::Bug(int id,int x, int y,int direction,int size){
     this->direction = direction;
     this->size = size;
     this->alive = true;
+    path.push_back(position);
 }
 
 Bug::Bug(){
@@ -18,7 +19,7 @@ Bug::Bug(){
     this->direction=1;
     this->size=1;
     this->alive=true;
-    this->path;                    //pair
+                       //pair
 }
 
 int Bug::getId() const {
@@ -92,5 +93,6 @@ bool Bug::isWayBlocked(){
             }
             break;
     }
+    return false;
 }
 

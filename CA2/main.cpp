@@ -9,6 +9,14 @@ int main() {
 
     board.displayAllBugs();
 
+//    int id;
+//    cout<< "Type id of a bug you want to look up: " << endl;
+//    cin>>id;
+//    board.findBug(id);
+    cout<< " "<<endl;
+    board.tap();
+    board.displayAllBugs();
+
 
     return 0;
 }

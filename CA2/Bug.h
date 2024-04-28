@@ -11,7 +11,6 @@ using namespace std;
 
 class Bug {
 protected:
-
     int id;
     pair<int, int> position;
     int direction;
